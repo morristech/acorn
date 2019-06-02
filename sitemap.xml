@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>https://nhaarman.github.io/acorn/sitemap-home.xml</loc>
+        <lastmod>2019-06-02T15:52:34.150</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://nhaarman.github.io/acorn/sitemap-kotlindoc.xml</loc>
+        <lastmod>2019-06-02T15:52:34.152</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://nhaarman.github.io/acorn/sitemap-wiki.xml</loc>
+        <lastmod>2019-06-02T15:52:34.155</lastmod>
+    </sitemap>
+    
+</sitemapindex>
