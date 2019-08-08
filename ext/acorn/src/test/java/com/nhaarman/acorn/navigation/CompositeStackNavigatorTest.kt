@@ -1249,7 +1249,8 @@ internal class CompositeStackNavigatorTest {
             /* When */
             val bundle = navigator.saveInstanceState()
             navigator1Scene1.foo = 42
-            val restoredNavigator = SavableTestCompositeStackNavigator(listOf(savableNavigator1), bundle)
+            val restoredNavigator =
+                SavableTestCompositeStackNavigator(listOf(savableNavigator1), bundle)
             restoredNavigator.onStart()
             restoredNavigator.addNavigatorEventsListener(listener)
 
@@ -1273,7 +1274,8 @@ internal class CompositeStackNavigatorTest {
             /* When */
             val bundle = navigator.saveInstanceState()
             navigator1Scene1.foo = 42
-            val restoredNavigator = SavableTestCompositeStackNavigator(listOf(savableNavigator2), bundle)
+            val restoredNavigator =
+                SavableTestCompositeStackNavigator(listOf(savableNavigator2), bundle)
             restoredNavigator.onStart()
             restoredNavigator.addNavigatorEventsListener(listener)
 
@@ -1297,7 +1299,8 @@ internal class CompositeStackNavigatorTest {
 
             /* When */
             val bundle = navigator.saveInstanceState()
-            val restoredNavigator = SavableTestCompositeStackNavigator(listOf(savableNavigator1), bundle)
+            val restoredNavigator =
+                SavableTestCompositeStackNavigator(listOf(savableNavigator1), bundle)
             restoredNavigator.onStart()
             restoredNavigator.addNavigatorEventsListener(listener)
 
@@ -1334,7 +1337,8 @@ internal class CompositeStackNavigatorTest {
 
             /* When */
             val bundle = navigator.saveInstanceState()
-            val restoredNavigator = SavableTestCompositeStackNavigator(listOf(savableNavigator2), bundle)
+            val restoredNavigator =
+                SavableTestCompositeStackNavigator(listOf(savableNavigator2), bundle)
             restoredNavigator.onStart()
             restoredNavigator.addNavigatorEventsListener(listener)
 
@@ -1369,7 +1373,8 @@ internal class CompositeStackNavigatorTest {
 
             /* When */
             val bundle = navigator.saveInstanceState()
-            val restoredNavigator = SavableTestCompositeStackNavigator(listOf(savableNavigator2), bundle)
+            val restoredNavigator =
+                SavableTestCompositeStackNavigator(listOf(savableNavigator2), bundle)
             restoredNavigator.onStart()
             restoredNavigator.addNavigatorEventsListener(listener)
 
@@ -1448,7 +1453,10 @@ internal class CompositeStackNavigatorTest {
             return initialStack
         }
 
-        override fun instantiateScene(sceneClass: KClass<out Scene<*>>, state: SceneState?): Scene<*> {
+        override fun instantiateScene(
+            sceneClass: KClass<out Scene<*>>,
+            state: SceneState?
+        ): Scene<*> {
             return when (sceneClass) {
                 SavableTestScene::class -> SavableTestScene.create(state)
                 else -> error("Unknown class: $sceneClass")
