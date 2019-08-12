@@ -243,6 +243,20 @@ internal class CompositeParallelNavigatorTest {
             }
 
             @Test
+            fun `changing to the same destination twice notifies listeners of scene only once`() {
+                /* Given */
+                navigator.addNavigatorEventsListener(listener)
+                navigator.onStart()
+
+                /* When */
+                navigator.select(Destination2)
+                navigator.select(Destination2)
+
+                /* Then */
+                verify(listener, times(1)).scene(eq(navigator2Scene1), anyOrNull())
+            }
+
+            @Test
             fun `start navigator after destination changed notifies pushed scene`() {
                 /* Given */
                 navigator.addNavigatorEventsListener(listener)
@@ -578,6 +592,19 @@ internal class CompositeParallelNavigatorTest {
 
             /* Then */
             verify(navigator2).onStart()
+        }
+
+        @Test
+        fun `changing to the same destination twice after navigator started starts selected child navigator only once`() {
+            /* Given */
+            navigator.onStart()
+
+            /* When */
+            navigator.select(Destination2)
+            navigator.select(Destination2)
+
+            /* Then */
+            verify(navigator2, times(1)).onStart()
         }
 
         @Test

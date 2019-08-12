@@ -17,12 +17,12 @@
 package com.nhaarman.acorn.navigation.experimental
 
 import androidx.annotation.CallSuper
-import com.nhaarman.acorn.navigation.experimental.internal.v
-import com.nhaarman.acorn.navigation.experimental.internal.w
 import com.nhaarman.acorn.navigation.DisposableHandle
 import com.nhaarman.acorn.navigation.Navigator
 import com.nhaarman.acorn.navigation.SavableNavigator
 import com.nhaarman.acorn.navigation.TransitionData
+import com.nhaarman.acorn.navigation.experimental.internal.v
+import com.nhaarman.acorn.navigation.experimental.internal.w
 import com.nhaarman.acorn.presentation.Container
 import com.nhaarman.acorn.presentation.Scene
 import com.nhaarman.acorn.state.NavigatorState
@@ -329,6 +329,8 @@ abstract class CompositeParallelNavigator<Destination>(
         }
 
         override fun select(destination: Destination): StateTransition<Destination> {
+            if (destination == selectedDestination) return StateTransition(this)
+
             val newNavigators = navigators
                 .also { it.getOrPut(destination) { createNavigatorInternal(destination, null) } }
 
